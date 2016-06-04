@@ -18,11 +18,7 @@ if __name__ == '__main__':
             else:
                 print "Error: File already exists."
                 flag = raw_input("Continue with this name? (y/n): ")
-                if flag == 'y':
-                    flag = True
-                else:
-                    flag = False
-            if flag:
+            if flag == 'y':
                 break
         args = raw_input("Enter miner arguements separated by spaces: ").strip().split(' ')
     else:
@@ -34,6 +30,9 @@ if __name__ == '__main__':
             flag = raw_input("Continue with this name? (y/n): ")
             if flag == 'y':
                 break
+            else:
+                file_name = raw_input("Enter data file name: ")
+                path = "data/" + file_name + '.txt'
 
     params = file_name + " " + " ".join(args)
     status = "Filename: %s.txt\nSearch terms: %s" % (file_name, args)
