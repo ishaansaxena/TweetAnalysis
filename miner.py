@@ -10,7 +10,7 @@ ACCESS_TOKEN_SECRET = "RZxtnE4ClPUsRmkBb8JiUB9AaH9Co2oDPobpR9iJa3rah"
 CONSUMER_KEY = "dTsJNrZbZdXvP1H1UuiVRzDLo"
 CONSUMER_KEY_SECRET = "hRSWlmfFs1RmwSNfrRv7h1TRMsw8HdbcSf1FaToc6qeJoOuYYW"
 
-# Stream Listener; saves streams to ../json/
+# Stream Listener; saves streams to data/file_name.txt
 class JSONListener(StreamListener):
 
     def on_data(self, data):
@@ -24,10 +24,9 @@ class JSONListener(StreamListener):
 
 if __name__ == '__main__':
 
-    print "Mining Started"
+    print "\n\nMining Started"
     print "Filename: %s" % sys.argv[1]
-    print "Parameters: %s" % sys.argv[2:]
-    print "\n\n"
+    print "Parameters: %s\n\n" % sys.argv[2:]
 
     listener = JSONListener()
     auth = OAuthHandler(CONSUMER_KEY, CONSUMER_KEY_SECRET)
