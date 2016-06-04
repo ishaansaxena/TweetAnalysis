@@ -18,13 +18,13 @@ class JSONListener(StreamListener):
     def on_data(self, data):
         try:
             data_dict = json.loads(data)
-            data_tup = (data_dict["created_at"], data_dict["text"])
-            print "Created at: %s\n%s\n" % data_tup
+            data_tup = (data_dict["created_at"], data_dict["user"]["screen_name"], data_dict["text"])
+            print "Created at: %s by @%s\n%s\n" % data_tup
             print 
         except Exception, e:
-            print "Error: %s\n" % e
+            print "Error: %s.\n" % e
         with open('data/' + sys.argv[1] + '.txt', 'a') as f:
-            f.writelines(data.strip())
+            f.writelines(data)
             # Collecting all raw data for advanced analysis
             # If not required, only content can be appended to f
         return True
