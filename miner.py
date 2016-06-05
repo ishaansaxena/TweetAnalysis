@@ -45,4 +45,4 @@ if __name__ == '__main__':
     auth = OAuthHandler(CONSUMER_KEY, CONSUMER_KEY_SECRET)
     auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
     input_stream = Stream(auth, listener)
-    input_stream.filter(track=sys.argv[2:])
+    input_stream.filter(languages=["en"], track=sys.argv[2:])
