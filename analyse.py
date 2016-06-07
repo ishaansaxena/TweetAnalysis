@@ -10,3 +10,4 @@ TWEET_DATA = []
 
 if __name__ == '__main__':
     # TODO: Write http://adilmoujahid.com/posts/2014/07/twitter-analytics/
+    # Basic sentiment analysis in grade.py
