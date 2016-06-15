@@ -5,6 +5,7 @@ import sys
 import json
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler, Stream
+from vaderSentiment.vaderSentiment import sentiment
 
 # Access Tokens
 ACCESS_TOKEN = "3759161294-4BTsEaIZ5imG1zwuif6aTH4DRDdWwCiasN0J1ru"
@@ -21,12 +22,11 @@ class JSONListener(StreamListener):
             data_tup = (data_dict["created_at"], data_dict["user"]["screen_name"], data_dict["text"])
             print "Created at: %s by @%s\n%s\n" % data_tup
             print 
+            data_dict["score"] = sentiment(data_dict["text"])
         except Exception, e:
             print "Error: %s.\n" % e
         with open('data/' + sys.argv[1] + '.txt', 'a') as f:
-            f.writelines(data)
-            # Collecting all raw data for advanced analysis
-            # If not required, only content can be appended to f
+            f.writelines(json.dumps(data_dict))
         return True
 
     def on_error(self, status):
