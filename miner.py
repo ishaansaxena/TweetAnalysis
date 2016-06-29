@@ -8,10 +8,10 @@ from tweepy import OAuthHandler, Stream
 from vaderSentiment.vaderSentiment import sentiment
 
 # Access Tokens
-ACCESS_TOKEN = "3759161294-4BTsEaIZ5imG1zwuif6aTH4DRDdWwCiasN0J1ru"
-ACCESS_TOKEN_SECRET = "RZxtnE4ClPUsRmkBb8JiUB9AaH9Co2oDPobpR9iJa3rah"
-CONSUMER_KEY = "dTsJNrZbZdXvP1H1UuiVRzDLo"
-CONSUMER_KEY_SECRET = "hRSWlmfFs1RmwSNfrRv7h1TRMsw8HdbcSf1FaToc6qeJoOuYYW"
+ACCESS_TOKEN = ""
+ACCESS_TOKEN_SECRET = ""
+CONSUMER_KEY = ""
+CONSUMER_KEY_SECRET = ""
 
 # Stream Listener; saves streams to data/file_name.txt
 class JSONListener(StreamListener):
