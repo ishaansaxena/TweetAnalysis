@@ -24,17 +24,16 @@ class JSONListener(StreamListener):
                 "text":         data_clone["text"],
                 "user":         data_clone["user"]["screen_name"],
                 "followers":    data_clone["user"]["followers_count"],
-                "score":        sentiment(data_dict["text"].encode('utf-8'))
             }
             print "Created at: %s by @%s\n%s\n" % (save_data["created_at"], save_data["user"], save_data["text"])
+            save_data["score"] = sentiment(save_data["text"].encode('utf-8'))
             for line in save_data["score"]:
-                print line
-                print data_dict["score"][line]
+                print line, save_data["score"][line]
             print ""
         except Exception, e:
             print "Error: %s.\n" % e
         with open('data/' + sys.argv[1] + '.txt', 'a') as f:
-            f.writelines(json.dumps(save_data))
+            f.writelines(json.dumps(save_data)+'\n')
         return True
 
     def on_error(self, status):
