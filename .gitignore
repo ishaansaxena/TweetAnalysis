@@ -1,3 +1,4 @@
 *.pyc
 data/
 plots/
+access_data.json
