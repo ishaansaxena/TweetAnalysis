@@ -9,7 +9,7 @@ from vaderSentiment.vaderSentiment import sentiment
 
 # Access Tokens
 with open("access_data.json") as AD:
-    ACCESS_DATA = json.loads(AD.readlines())
+    ACCESS_DATA = json.loads(AD.read())
     ACCESS_TOKEN = ACCESS_DATA["ACCESS_TOKEN"]
     ACCESS_TOKEN_SECRET = ACCESS_DATA["ACCESS_TOKEN_SECRET"]
     CONSUMER_KEY = ACCESS_DATA["CONSUMER_KEY"]
