@@ -1,2 +1,2 @@
 # TweetAnalysis
-Sentiment analysis of Tweets for stock market predictions
+Evaluating stock trend via sentiment analysis of Tweets.
